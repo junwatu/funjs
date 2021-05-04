@@ -5,20 +5,25 @@
  */
 import * as O from "../Object";
 
-describe("Test Properti Object", () => {
-  test("Test Properti Pengirim", () => {
-    expect(O.SemuaTransaksi.pengirim).toEqual("admin@sajen.id");
-  });
-  test("Test Properti Penerima", () => {
-    expect(O.SemuaTransaksi.penerima).toEqual("mov@jump.com");
-  });
-  test("Test Properti Pengirim", () => {
+describe("Test Object.create() → Transaksi", () => {
+  // Transaksi
+  test("Pengirim Object Transaksi", () => {
     expect(O.Transaksi.pengirim).toEqual("admin@sajen.id");
   });
 });
 
-describe("Test Object", () => {
-  test("Test Prototipe Of", () => {
+describe("Test Object.create() → SemuaTransaksi", () => {
+  // SemuaTransaksi
+  test("Pengirim Object SemuaTransaksi", () => {
+    expect(O.SemuaTransaksi.pengirim).toEqual("admin@sajen.id");
+  });
+  test("Penerima Object SemuaTransaksi", () => {
+    expect(O.SemuaTransaksi.penerima).toEqual("mov@jump.com");
+  });
+})
+
+describe("Test Prototipe of Object", () => {
+  test("Prototipe Of SemuaTransaksi adalah Transaksi", () => {
     expect(Object.getPrototypeOf(O.SemuaTransaksi)).toStrictEqual(O.Transaksi);
   });
 });
