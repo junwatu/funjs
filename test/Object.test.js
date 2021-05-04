@@ -31,4 +31,8 @@ describe("Test Prototipe of Object", () => {
   test("Prototipe Of SemuaTransaksi adalah Transaksi", () => {
     expect(Object.getPrototypeOf(O.SemuaTransaksi)).toStrictEqual(O.Transaksi);
   });
+
+  test("Prototipe Of Transaksi adalah Object.prototype", () => {
+    expect(Object.getPrototypeOf(O.Transaksi)).toStrictEqual(Object.prototype);
+  })
 });
