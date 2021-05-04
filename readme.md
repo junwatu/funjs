@@ -1,4 +1,4 @@
-# KodeJS
+# FunJS
 
 Fundamental JavaScript
 
