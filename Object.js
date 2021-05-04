@@ -31,3 +31,36 @@ const SemuaTransaksi = Object.create(Transaksi);
 SemuaTransaksi.penerima = penerima;
 
 export { Transaksi, SemuaTransaksi };
+
+
+/**
+ * "Rantai Prototype"
+ * 
+ * Rantai differential inheritance sebagai berikut:
+ * 
+ * SemuaTransaksi.[[Prototype]] → Transaksi.[[Prototype]] → Object.prototype → null
+ * 
+ * ---
+ * 
+ * Notasi Transaksi.[[Prototype]] adalah untuk menunjukkan prototipe dari Transaksi.
+ * 
+ * Kalau dilihat pada console dev tools chrome, Properti [[Prototype]] identik dengan
+ *  __proto__ dan properti ini bisa diakses melalui 2 metode:
+ * 
+ * - Object.getPrototypeOf()
+ * 
+ * - Object.setPrototypeOf()
+ * 
+ * ======================================================================================
+ * Kasus spesial adalah properti prototipe pada kreasi object melalui fungsi constructor.
+ * 
+ * func.prototype
+ * 
+ * Properti prototype disini gunanya adalah untuk menghubungkan tiap instance dari object 
+ * yang dibuat melalui constructor (new) dengan prototipe fungsi tersebut.
+ * 
+ * Untuk lebih jelasnya lihat file ObjectFunction.js
+ * 
+ * ======================================================================================
+ * 
+ */
