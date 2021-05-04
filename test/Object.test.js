@@ -4,22 +4,27 @@
  *
  */
 import * as O from "../Object";
+import { admin, penerima } from "../Dat";
 
 describe("Test Object.create() → Transaksi", () => {
   // Transaksi
   test("Pengirim Object Transaksi", () => {
-    expect(O.Transaksi.pengirim).toEqual("admin@sajen.id");
+    expect(O.Transaksi.pengirim).toEqual(admin);
   });
 });
 
 describe("Test Object.create() → SemuaTransaksi", () => {
   // SemuaTransaksi
   test("Pengirim Object SemuaTransaksi", () => {
-    expect(O.SemuaTransaksi.pengirim).toEqual("admin@sajen.id");
+    expect(O.SemuaTransaksi.pengirim).toEqual(admin);
   });
   test("Penerima Object SemuaTransaksi", () => {
-    expect(O.SemuaTransaksi.penerima).toEqual("mov@jump.com");
+    expect(O.SemuaTransaksi.penerima).toEqual(penerima);
   });
+
+  test("Prototipe Properti Penerima", () => {
+    expect(O.SemuaTransaksi.pengirim).toStrictEqual(O.Transaksi.pengirim);
+  })
 })
 
 describe("Test Prototipe of Object", () => {
