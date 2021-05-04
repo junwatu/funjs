@@ -48,19 +48,19 @@ export { Transaksi, SemuaTransaksi };
  *  __proto__ dan properti ini bisa diakses melalui 2 metode:
  * 
  * - Object.getPrototypeOf()
- * 
  * - Object.setPrototypeOf()
  * 
  * ======================================================================================
- * Kasus spesial adalah properti prototipe pada kreasi object melalui fungsi constructor.
+ * Kasus spesial adalah properti prototype pada kreasi object melalui constructor fungsi.
+ * dan juga pada properti prototype pada Object.
  * 
- * func.prototype
+ * - func.prototype
+ * - Object.prototype
  * 
  * Properti prototype disini gunanya adalah untuk menghubungkan tiap instance dari object 
- * yang dibuat melalui constructor (new) dengan prototipe fungsi tersebut.
+ * yang dibuat melalui constructor (new pada fungsi) dengan prototipe fungsi atau Object.
  * 
- * Untuk lebih jelasnya lihat file ObjectFunction.js
- * 
+ * Untuk fungsi, lebih jelasnya lihat file ObjectFunction.js
  * ======================================================================================
  * 
  */
