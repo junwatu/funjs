@@ -25,7 +25,7 @@ describe("Test Object.create() → SemuaTransaksi", () => {
   test("Prototipe Properti Penerima", () => {
     expect(O.SemuaTransaksi.pengirim).toStrictEqual(O.Transaksi.pengirim);
   })
-})
+});
 
 describe("Test Prototipe of Object", () => {
   test("Prototipe Of SemuaTransaksi adalah Transaksi", () => {
@@ -40,3 +40,20 @@ describe("Test Prototipe of Object", () => {
     expect(O.Transaksi.isPrototypeOf(O.SemuaTransaksi)).toBeTruthy();
   })
 });
+
+describe("Test Property", () => {
+  const propDescriptor = Object.getOwnPropertyDescriptor(O.transaksiUang, 'dana'); 
+
+  test("Not Enumerable", () => {
+    expect(Object.keys(O.transaksiUang)).toEqual([]);
+    expect(propDescriptor.enumerable).toEqual(false);
+  })
+
+  test("Not Writable", () => {  
+    expect(propDescriptor.writable).toEqual(false);
+  })
+
+  test("Tidak bisa di delete", () => {
+    expect(propDescriptor.configurable).toEqual(false);
+  })
+})
