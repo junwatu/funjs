@@ -14,6 +14,14 @@
 1. Pembuatan Objek
    
     [1.1 Object.create()](Object.js)
+    
+    <details>
+      <summary>Test</summary>
+
+    ```
+    npx jest .\test\Object.test.js
+    ```
+    </details>
 
 
 
