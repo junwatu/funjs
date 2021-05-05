@@ -78,6 +78,10 @@ const transaksiUang = Object.create(Transaksi, {
  * writable: immutable atau mutable. Jika false maka immutable.
  * configurable: bisa dihapus dengan operator delete atau tidak. Jika false maka tidak akan bisa di delete.
  * 
+ * cek deskripsi properti memakai:
+ * 
+ * - Object.getOwnPropertyDescriptor() untuk satu properti.
+ * - Object.getOwnPropertyDescriptors()
  */
 
 
