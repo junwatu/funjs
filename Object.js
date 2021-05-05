@@ -27,18 +27,15 @@ const Transaksi = {
 /**
  * Pembuatan Object baru dengan Object.create() berdasar Object Transaksi
  */
-const SemuaTransaksi = Object.create(Transaksi);
-SemuaTransaksi.penerima = penerima;
-
-export { Transaksi, SemuaTransaksi };
-
+const semuaTransaksi = Object.create(Transaksi);
+semuaTransaksi.penerima = penerima;
 
 /**
  * "Rantai Prototype"
  * 
  * Rantai differential inheritance sebagai berikut:
  * 
- * SemuaTransaksi.[[Prototype]] → Transaksi.[[Prototype]] → Object.prototype → null
+ * semuaTransaksi.[[Prototype]] → Transaksi.[[Prototype]] → Object.prototype → null
  * 
  * ---
  * 
@@ -64,3 +61,24 @@ export { Transaksi, SemuaTransaksi };
  * ======================================================================================
  * 
  */
+
+const transaksiUang = Object.create(Transaksi, {
+  dana: {
+    value: 1000,
+    enumerable: false,
+    writable: false,
+    configurable: false
+  }
+})
+
+/**
+ * Property Descriptor Map
+ * 
+ * enumerable: Bisa atau tidak properti ini di-list melalui metode Objec.keys().
+ * writable: immutable atau mutable. Jika false maka immutable.
+ * configurable: bisa dihapus dengan operator delete atau tidak. Jika false maka tidak akan bisa di delete.
+ * 
+ */
+
+
+export { Transaksi, semuaTransaksi as SemuaTransaksi, transaksiUang };
