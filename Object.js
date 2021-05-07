@@ -25,7 +25,10 @@ const Transaksi = {
 };
 
 /**
- * Pembuatan Object baru dengan Object.create() berdasar Object Transaksi
+ * Pembuatan Object
+ * 
+ * 
+ * 1. Memakai Object.create()
  */
 const semuaTransaksi = Object.create(Transaksi);
 semuaTransaksi.penerima = penerima;
@@ -86,3 +89,16 @@ const transaksiUang = Object.create(Transaksi, {
 
 
 export { Transaksi, semuaTransaksi as SemuaTransaksi, transaksiUang };
+
+
+/**
+ * Setting Prototype?
+ * 
+ * Bisa dengan memakai metode Object.setPrototypeOf(), 
+ * hanya saja menurut literatur https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf
+ * ada kendala performansi, dengan mengubah prototype suatu object maka akan juga mengubah
+ * rantai prototype dari setiap object yang terhubung dengan prototype yang telah kita ubah tadi.
+ * 
+ * Sehingga sangat disarankan untuk membuat object baru dengn memakai Object.create()
+ *
+ */
