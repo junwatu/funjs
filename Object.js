@@ -87,15 +87,13 @@ const transaksiUang = Object.create(Transaksi, {
  * - Object.getOwnPropertyDescriptors()
  */
 
-
 export { Transaksi, semuaTransaksi as SemuaTransaksi, transaksiUang };
-
 
 /**
  * Setting Prototype?
  * 
- * Bisa dengan memakai metode Object.setPrototypeOf(), 
- * hanya saja menurut literatur https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf
+ * Bisa dengan memakai metode Object.setPrototypeOf(), hanya saja menurut literatur 
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf
  * ada kendala performansi, dengan mengubah prototype suatu object maka akan juga mengubah
  * rantai prototype dari setiap object yang terhubung dengan prototype yang telah kita ubah tadi.
  * 
