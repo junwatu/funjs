@@ -9,24 +9,24 @@
  * 
  *  
  * 
- * Object.getPrototypeOf(Fx.prototype) === Object.prototype // true
+ * Object.getPrototypeOf(Transaksi.prototype) === Object.prototype // true
  */
-const Fx = function () {
-    this.gx = "Galak"
-    this.fx = "Efek"
+const Transaksi = function (pengirim, penerima) {
+    this.pengirim = pengirim
+    this.penerima = penerima
 }
 
 /**
- * Instance xF tidak lagi mempunyai properti prototype tertulis seperti Fx
- * tetapi tetap mempunyai properti [[Prototype]].
+ * Instance hashTransaksi tidak lagi mempunyai properti prototype tertulis seperti fungsi Transaksi
+ * tetapi hashTransaksi tetap mempunyai properti [[Prototype]].
  * 
- * Object.getPrototypeOf(xF) === Fx.prototype // true
+ * Object.getPrototypeOf(hashTransaksi0) === Transaksi.prototype // true
  * 
  * Notasi rantai differential inheritance bisa dituliskan seperti berikut
  * 
- * xF.[[Prototype]] → Fx.prototype → Object.prototype → null
+ * hashTransaksi.[[Prototype]] → Transaksi.prototype → Object.prototype → null
  * 
  */
-const xF = new Fx()
+const hashTransaksi = new Transaksi()
 
-export { Fx, xF }
+export { Transaksi as Fx, hashTransaksi as xF }
