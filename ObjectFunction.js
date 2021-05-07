@@ -1,5 +1,13 @@
 /**
- * "Pembuatan Objek malalui Constructor Fungsi"
+ * Pembuatan Objek
+ * 
+ * 2. Melalui Function (Fungsi)
+ * 
+ * Meskipun pembuatan objek secara literal (lihat Object.js) banyak dipakai di pengembangan aplikasi JavaScript
+ * tetapi untuk pembuatan banyak objek serupa maka pembuatan objek dengan memakai function akan jauh 
+ * lebih efektif.
+ * 
+ *  
  * 
  * Object.getPrototypeOf(Fx.prototype) === Object.prototype // true
  */
