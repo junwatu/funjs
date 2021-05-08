@@ -16,6 +16,16 @@ const Transaksi = function (pengirim, penerima) {
     this.penerima = penerima
 }
 
+/**
+ * tampilkanTransaksi() merupakan fungsi yang akan di-share untuk setiap instance, hampir sama dengan
+ * metode statik pada OOP.
+ * 
+ * @returns 
+ */
+Transaksi.prototype.tampilkanTransaksi = function tampilkanTransaksi() {
+    return `Transaksi dari ${this.pengirim} ke ${this.penerima}`
+}
+
 function HashTransaksi(pengirim, penerima) {
     Transaksi.call(this, pengirim, penerima)
 }
@@ -36,4 +46,4 @@ HashTransaksi.prototype = Object.create(Transaksi.prototype)
 const tx = new Transaksi(pengirim, penerima)
 
 
-export { Transaksi as Fx, tx as xF }
+export { Transaksi, tx }
