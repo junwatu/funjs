@@ -16,6 +16,11 @@ const Transaksi = function (pengirim, penerima) {
     this.penerima = penerima
 }
 
+function HashTransaksi(pengirim, penerima) {
+    Transaksi.call(this, pengirim, penerima)
+}
+
+HashTransaksi.prototype = Object.create(Transaksi.prototype)
 
 /**
  * INSTANCE tx tidak lagi mempunyai properti prototype tertulis seperti fungsi Transaksi
@@ -29,5 +34,6 @@ const Transaksi = function (pengirim, penerima) {
  * 
  */
 const tx = new Transaksi(pengirim, penerima)
+
 
 export { Transaksi as Fx, tx as xF }
