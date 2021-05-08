@@ -4,7 +4,10 @@
  *
  */
 
-import { Transaksi, tx } from "../ObjectFunction";
+import { Transaksi, HashTransaksi, tx } from "../ObjectFunction";
+import { penerima, pengirim } from "../Dat"
+
+const tx2 = new Transaksi(pengirim, penerima);
 
 describe("Test Object dari Function", () => {
     test("Prototype dari Transaksi adalah Object.prototype", () => {
@@ -12,6 +15,20 @@ describe("Test Object dari Function", () => {
     })
 
     test("Prototype dari tx adalah Transaksi.prototype", () => {
+        expect(tx).toBeInstanceOf(Transaksi);
         expect(Object.getPrototypeOf(tx)).toStrictEqual(Transaksi.prototype);
+    })
+
+    test("Protoype dari HashTransaksi adalah Transaksi", () => {
+        expect(Object.getPrototypeOf(HashTransaksi.prototype)).toStrictEqual(Transaksi.prototype);
+    })
+
+    test("Contructor dari HashTransaksi adalah HashTransaksi", () => {
+        expect(HashTransaksi.prototype.constructor).toStrictEqual(HashTransaksi)
+    })
+
+    test("Share function", () => {
+        expect(tx2).toBeInstanceOf(Transaksi);
+        expect(tx.tampilkanTransaksi).toStrictEqual(tx2.tampilkanTransaksi);
     })
 })
