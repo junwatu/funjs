@@ -30,7 +30,13 @@ function HashTransaksi(pengirim, penerima) {
     Transaksi.call(this, pengirim, penerima)
 }
 
+/**
+ * Supaya HashTransaksi prototype nge-link dengan Transaksi maka HashTransaksi.prototype
+ * harus di set ke prototype dari Transaksi
+ */
 HashTransaksi.prototype = Object.create(Transaksi.prototype)
+
+HashTransaksi.prototype.constructor = HashTransaksi
 
 /**
  * INSTANCE tx tidak lagi mempunyai properti prototype tertulis seperti fungsi Transaksi
@@ -46,4 +52,4 @@ HashTransaksi.prototype = Object.create(Transaksi.prototype)
 const tx = new Transaksi(pengirim, penerima)
 
 
-export { Transaksi, tx }
+export { Transaksi, HashTransaksi, tx }
