@@ -32,10 +32,14 @@ function HashTransaksi(pengirim, penerima) {
 
 /**
  * Supaya HashTransaksi prototype nge-link dengan Transaksi maka HashTransaksi.prototype
- * harus di set ke prototype dari Transaksi
+ * harus di set ke prototype dari Transaksi.
  */
 HashTransaksi.prototype = Object.create(Transaksi.prototype)
 
+/**
+ * Mengatur kembali constructor dari HashTransaksi ke HashTransaksi itu sendiri.
+ * Tanpa kode dibawah maka constructor HashTransaksi akan menunjuk pada Transaksi.
+ */
 HashTransaksi.prototype.constructor = HashTransaksi
 
 /**
