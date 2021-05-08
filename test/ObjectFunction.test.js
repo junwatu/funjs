@@ -4,14 +4,14 @@
  *
  */
 
-import * as OF from "../ObjectFunction";
+import { Transaksi, tx } from "../ObjectFunction";
 
 describe("Test Object dari Function", () => {
-    test("Prototype dari Fx adalah Object.prototype", () => {
-        expect(Object.getPrototypeOf(OF.Fx.prototype)).toStrictEqual(Object.prototype);
+    test("Prototype dari Transaksi adalah Object.prototype", () => {
+        expect(Object.getPrototypeOf(Transaksi.prototype)).toStrictEqual(Object.prototype);
     })
 
-    test("Prototype dari xF adalah Fx.prototype", () => {
-        expect(Object.getPrototypeOf(OF.xF)).toStrictEqual(OF.Fx.prototype);
+    test("Prototype dari tx adalah Transaksi.prototype", () => {
+        expect(Object.getPrototypeOf(tx)).toStrictEqual(Transaksi.prototype);
     })
 })
