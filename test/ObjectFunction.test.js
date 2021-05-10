@@ -8,6 +8,8 @@ import { Transaksi, HashTransaksi, tx } from "../ObjectFunction";
 import { penerima, pengirim } from "../Dat"
 
 const tx2 = new Transaksi(pengirim, penerima);
+const hTx = new HashTransaksi(pengirim, penerima);
+const hTx2 = new HashTransaksi(pengirim, penerima); 
 
 describe("Test Object dari Function", () => {
     test("Prototype dari Transaksi adalah Object.prototype", () => {
@@ -30,5 +32,9 @@ describe("Test Object dari Function", () => {
     test("Share function", () => {
         expect(tx2).toBeInstanceOf(Transaksi);
         expect(tx.tampilkanTransaksi).toStrictEqual(tx2.tampilkanTransaksi);
+
+        expect(hTx).toBeInstanceOf(HashTransaksi);
+        expect(hTx.tampilkanTransaksi).toStrictEqual(hTx2.tampilkanTransaksi);
     })
+
 })
