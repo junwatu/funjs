@@ -23,6 +23,17 @@
     ```
     </details>
 
+    [1.2 Function Constructor](ObjectFuntion.js)
+
+    <details>
+      <summary>Test</summary>
+
+    ```
+    npx jest .\test\ObjectFunction.test.js
+    ```
+    </details>
+
+
 
 
 
