@@ -19,14 +19,21 @@ const Transaksi = function (pengirim, penerima) {
 /**
  * tampilkanTransaksi() merupakan fungsi yang akan di-share untuk setiap instance, hampir sama dengan
  * metode statik pada OOP.
- * 
- * @returns 
  */
 Transaksi.prototype.tampilkanTransaksi = function tampilkanTransaksi() {
     return `Transaksi dari ${this.pengirim} ke ${this.penerima}`
 }
 
 function HashTransaksi(pengirim, penerima) {
+    /**
+     * ECMAScript 5 
+     * Cara untuk mengatasi jika lupa dalam meng-instantiate memakai keyword new 🙃
+     * 
+     * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new.target
+     */
+    if (!new.target) {
+        return new HashTransaksi(pengirim, penerima)
+    }
     Transaksi.call(this, pengirim, penerima)
 }
 
@@ -57,3 +64,10 @@ const tx = new Transaksi(pengirim, penerima)
 
 
 export { Transaksi, HashTransaksi, tx }
+
+/**
+ * Meskipun memakai fungsi constructor jauh lebih unggul daripada object literal
+ * tetapi kekurangan terbesarnya adalah hilangnya mekanisme otomatis dalam
+ * konfigurasi prototype, sehingga kalau salah dalam "wiring" prototype maka
+ * desain akan menjadi kacau.
+ */
