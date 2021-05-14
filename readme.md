@@ -23,7 +23,7 @@
     ```
     </details>
 
-    [1.2 Function Constructor](ObjectFuntion.js)
+    [1.2 Function Constructor](ObjectFunction.js)
 
     <details>
       <summary>Test</summary>
